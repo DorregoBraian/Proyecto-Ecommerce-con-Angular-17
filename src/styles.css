@@ -136,7 +136,9 @@ body.dark-mode .small-file{
   color: white;
 }
 
-
+body.dark-mode .carucel {
+  border:  solid grey;
+}
 
 
 
