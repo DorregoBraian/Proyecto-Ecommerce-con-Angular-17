@@ -1,0 +1,61 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura de la pantalla completa */
+    background-color: #BFDBFF; /* Color de fondo suave */
+}
+
+form {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 2rem; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    max-width: 400px; /* Ancho máximo del formulario */
+    width: 100%; /* Asegura que el formulario ocupe el ancho completo hasta el máximo */
+}
+
+h2 {
+    text-align: center; /* Centra el título */
+    margin-bottom: 1.5rem; /* Espacio debajo del título */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna */
+    color: #333333; /* Color del texto del título */
+}
+
+.form-label {
+    font-weight: bold; /* Hace que las etiquetas sean más destacadas */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna */
+    color: #555555; /* Color del texto de las etiquetas */
+}
+
+.form-control {
+    border: 1px solid #cccccc; /* Borde ligero */
+    padding: 0.5rem; /* Espaciado interno del input */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna */
+}
+
+button {
+    width: 100%; /* Botón ocupa todo el ancho del formulario */
+    padding: 0.75rem; /* Espaciado interno */
+    background-color: #007bff; /* Color azul */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    color: white; /* Color del texto en blanco */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+}
+
+button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+}
+
+#profileImage {
+    padding: 3%; /* Espaciado más pequeño para el input de archivo */
+}
+
+#imagePreview img{
+  max-width: 100%; 
+  height: auto;
+}

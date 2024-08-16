@@ -1,0 +1,83 @@
+header {
+  margin: 1% 20% 1% 20%;
+  display: grid;
+}
+.header-cabesera {
+  display: flex;
+  justify-content: space-between;
+  margin: 1%;
+}
+.header-cabesera-2 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-cabesera-2 img {
+  height: 60%;
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+}
+
+.header-cabesera-2 a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* menu desplegable*/
+
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none; /* Oculta el menú por defecto */
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color:  #BFDBFF;
+}
+
+/* Muestra el menú cuando menuVisible es true */
+.menu-container .dropdown-menu.show {
+  display: block;
+}
+
+.login {
+  cursor: pointer;
+}
+
+.titulo {
+  font-size: 300%;
+  text-align: center;
+  margin: 3% 0% 3% 0%;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+input {
+  height: 80%;
+  padding: 1%;
+}
+#foto-perfil {
+  width: 35px; /* Ancho fijo */
+  height: 35px; /* Alto fijo */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover; /* La imagen se recorta pero mantiene la proporción */
+}

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="main-titulo">
+        <hr>
+        <h3>CONTACTO</h3>
+        <hr>    
+    </div>
+    <p>¿Tienes alguna pregunta sobre tu compra? Estamos aquí para ayudarte. Por favor, completa el formulario a continuación y te responderemos a la brevedad.</p>
+    <form action="https://formsubmit.co/rayan_22_dorrego@hotmail.com" method="POST">
+        <div class="div-form-container">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" placeholder="Tu Nombre">
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="apellido" placeholder="Tu Apellido">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="telefono" placeholder="11-2345-6789">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="mensaje" placeholder="Cual es tu Asunto"></textarea>
+        </div>
+
+        <input type="hidden" name="_next" value="http://localhost:4200/home">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="_template">
+        
+        <button type="submit" class="btn btn-outline-secondary">Enviar</button>
+    </form>
+</div>

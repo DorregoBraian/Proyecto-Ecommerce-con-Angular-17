@@ -1,0 +1,32 @@
+<section class="section-registrar">
+  <form>
+    <h2>Registrate</h2>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" name="nombre" />
+    </div>
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="apellido" [(ngModel)]="apellido" name="apellido" />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" />
+    </div>
+    <div class="mb-3">
+      <label for="profileImage" class="form-label" id="label-file">Sube tu foto de perfil</label>
+      <input type="file" class="form-control" id="profileImage" (change)="onFileSelected($event)"/>
+      <small class="form-text text-muted" class="small-file">Formatos aceptados: JPG, PNG, GIF</small>
+    </div>
+    <div id="imagePreview">
+      @if(imagePreview){
+      <img [src]="imagePreview" alt="Vista previa de la imagen"/> 
+      }
+    </div>
+    <button (click)="registrarUser()">Registrar</button>
+  </form>
+</section>

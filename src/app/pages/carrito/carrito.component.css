@@ -1,0 +1,50 @@
+.div-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; /* Ajusta el espacio entre las tarjetas */
+  padding: 20px; /* Espaciado interno */
+  box-sizing: border-box;
+  margin: 0% 10% 0% 10%;
+}
+
+.div-container-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.div-btn-cantidad{
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+}
+
+.div-btn-cantidad input{
+    background-color: white;
+    color: black;
+    text-align:center;
+    width: 20%;
+    margin-left: 3%;
+    margin-right: 3%;
+    
+
+}
+
+.div-btn-cantidad button{
+    margin: 2%;
+    background-color: blue;
+    border: solid black;
+    
+
+}
+
+.btn-eliminar{
+    margin: 5% 0% 0% 25%;
+    padding: 2%;
+    width: 50%;
+    background-color: red;
+    border: solid black;
+}
+
+

@@ -1,0 +1,25 @@
+<div class="div-tienda">
+  <div class="div-filtro">
+    <select id="currency-select" [(ngModel)]="selectedMoneda" class="currency-select-moneda">
+      <option value="" disabled selected>Moneda</option>
+      @for (moneda of listMonedas; track $index) {
+      <option [value]="moneda">{{ moneda }}</option>
+      }
+    </select>
+    <select id="currency-select" [(ngModel)]="selectedCategoria" (change)="filterCategory()" class="currency-select-categoria">
+      <option value="" disabled selected>Categoría</option>
+      @for (categoria of listCategoria; track $index) {
+      <option [value]="categoria">{{ categoria }}</option>
+      }
+    </select>
+  </div>
+  <div class="div-card">
+    @for (product of productList; track $index){
+      <app-card 
+        (click)="detalleProducto(product.id)" 
+        [productCard]="product"
+        [typeMoneda]="selectedMoneda">
+      </app-card>
+    }
+  </div>
+</div>

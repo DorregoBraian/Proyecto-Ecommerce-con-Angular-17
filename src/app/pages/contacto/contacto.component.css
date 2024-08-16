@@ -1,0 +1,41 @@
+.container{
+    margin: 1% 15% 1% 16%;
+    display: grid;
+
+}
+
+.main-titulo{
+    display: flex;
+    align-items: center;
+    margin: 2%;
+
+}
+
+hr{
+    width: 30%;
+    margin: auto;
+
+}
+p{
+    width: 45%;
+    margin: 5% 30% 5% 30%;
+    font-size: 150%;
+    text-align: center;
+
+}
+.div-form-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+.mb-3{
+    flex: 1 1 calc(50% - 20px); /* Adjust for the gap */
+    
+}
+button{
+    margin: 3% 45% 5% 45%;
+}
+form{
+    margin: 3% 10% 3% 10%;
+}

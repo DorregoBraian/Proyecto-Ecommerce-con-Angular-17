@@ -1,0 +1,34 @@
+<header>
+    <div class="header-cabesera">
+        <input type="text" [(ngModel)]="nombreProducto" (keyup.enter)="buscarProducto()"  placeholder="Buscar..." >
+        <div class="header-cabesera-2">
+            <img src="Bolsa.gif" alt="Carito De Compras" (click)="redirigirAlCarrito()">
+            <div class="menu-container">
+                <a class="login" (click)="toggleMenu($event)">{{ isLoggedIn? 'Mi Cuenta' : 'Login' }}</a>
+                <div class="dropdown-menu" [ngClass]="{'show': menuVisible}" (mouseleave)="closeMenu()">
+                    @if(isLoggedIn){
+                        <a  routerLink="/carrito">Mi Carrito</a>
+                        <a  routerLink="/contacto">Ayuda</a>
+                        <a (click)="logout()">Cerrar Sesión</a>
+                    }@else{
+                        <a  routerLink="/login">Iniciar Sesión</a> 
+                    }
+                </div>
+            </div>
+            <img id="foto-perfil" [src]="userPhotoURL" alt="Icono del Perfil">
+            @if(modoOsc){
+                <img src="Oscuro.png" (click)="modoOscuro()" alt="Icono del Perfil">
+            }
+            @else(){
+                <img src="Claro.gif" (click)="modoOscuro()" alt="Icono del Perfil">
+            }
+        </div>
+    </div>
+    <a href="" class="titulo" routerLink="/main" >RopaStore</a>
+    <nav>
+        <a routerLink="tienda">TIENDA</a>
+        <a routerLink="acerca-de">ACERCA DE</a>
+        <a routerLink="blog">BLOG</a>
+        <a routerLink="contacto">CONTACTO</a>
+    </nav>
+</header>

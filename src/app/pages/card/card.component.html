@@ -1,0 +1,9 @@
+<div class="product-card">
+    <a class="product-link" routerLink="/tienda/:id">
+        <img src= {{productCard.image}} alt="Imagen de Campera" class="product-image">
+        <div class="product-info">
+            <h3 class="product-name"> {{productCard.title}} </h3>
+            <p class="product-price"> {{productCard.price | currency:typeMoneda }} </p>
+        </div>
+    </a>
+</div>

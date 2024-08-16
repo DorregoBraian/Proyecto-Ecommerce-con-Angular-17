@@ -1,0 +1,52 @@
+<div class="div-container">
+  <div class="div-container-1">
+    <img src= {{producto?.image}} alt="" />
+    <p> {{producto?.description}} </p>
+  </div>
+  <div class="div-container-1">
+    <h3> {{producto?.title}} </h3>
+    <h5> {{producto?.price | currency}} </h5>
+    <div class="div-cantidad">
+      <h5>Cantidad</h5>
+      <input type="number" [(ngModel)]="cantidad" (input)="onCantidadChange($event)" />
+    </div>
+    <div class="div-botones">
+      <div class="div-botones-carrito">
+        <button (click)="agregarAlCarrito(idProducto, cantidad)">Agregar al Carrito</button>
+        <img [src]="imageSrc" (click)="meGusta()" alt="Corazón" />
+      </div>
+      <button class="btn-compra">Realizar Compra</button>
+    </div>
+    <div class="info-section">
+      <button (click)="toggleInfo(0)">INFORMACIÓN DE PRODUCTO <span>{{ mostrarInfo[0].expanded ? '➖' : '➕' }}</span></button>
+      <hr>
+      @if(mostrarInfo[0].expanded){
+        <p>
+          Soy la descripción de un producto. Soy el lugar ideal para agregar detalles sobre tu producto, así como tamaño, materiales, instrucciones de cuidado y de limpieza. Es también un lugar ideal para destacar por qué este producto es especial y cómo tus clientes se beneficiarían con él.
+        </p>
+      }
+    </div>
+    
+    <div class="info-section">
+      <button (click)="toggleInfo(1)">POLÍTICA DE DEVOLUCIÓN Y REEMBOLSO <span>{{ mostrarInfo[1].expanded ? '➖' : '➕' }}</span></button>
+      <hr>
+      @if(mostrarInfo[1].expanded){
+        <p>
+          Soy una política de devolución y reembolso. Una oportunidad ideal para explicarles a tus clientes qué hacer en caso de no estar satisfechos con su compra. Al ofrecerles una política de reembolso clara y sencilla, generas confianza y credibilidad en tus clientes, pues saben que en tu tienda pueden realizar compras con altos niveles de seguridad.
+        </p>  
+      }
+    </div>
+    
+    <div class="info-section">
+      <button (click)="toggleInfo(2)"> INFORMACIÓN DEL ENVÍO <span>{{ mostrarInfo[2].expanded ? '➖' : '➕' }}</span></button>
+      <hr>
+      @if(mostrarInfo[2].expanded){
+        <p>
+          Soy la Política de envío. Soy el lugar ideal para agregar información sobre tus métodos de envío, costos y embalaje. Ofrecer una política de reembolso clara y sencilla, genera confianza y credibilidad en tus clientes, pues saben que en tu tienda pueden realizar compras con altos niveles de seguridad.
+        </p>
+      }
+      
+    </div>
+
+  </div>
+</div>
