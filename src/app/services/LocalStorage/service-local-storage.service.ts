@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class ServiceLocalStorageService {
 
   private localStorageKey = 'listCarrito';
+  private favoritosKey = 'listFavoritos';
 
   // Método para obtener el carrito de un usuario específico
   getCarrito(userId: string): [number, number][] {
@@ -68,5 +69,25 @@ export class ServiceLocalStorageService {
     const carritoActualizado = carrito.filter(([id]) => id !== productoId);
     const carritoKey = `${this.localStorageKey}_${userId}`;
     localStorage.setItem(carritoKey, JSON.stringify(carritoActualizado));
+  }
+  // Método para obtener los favoritos de un usuario específico
+  getFavoritos(userId: string): number[] {
+    const favoritosKey = `${this.favoritosKey}_${userId}`;
+    return JSON.parse(localStorage.getItem(favoritosKey) as string) || [];
+  }
+
+  // Método para alternar el estado de favorito de un producto
+  toggleFavorito(userId: string, productoId: number): void {
+    const favoritos = this.getFavoritos(userId);
+    const index = favoritos.indexOf(productoId);
+
+    if (index === -1) {
+      favoritos.push(productoId); // Si no está en favoritos, lo agrega
+    } else {
+      favoritos.splice(index, 1); // Si ya está en favoritos, lo elimina
+    }
+
+    const favoritosKey = `${this.favoritosKey}_${userId}`;
+    localStorage.setItem(favoritosKey, JSON.stringify(favoritos));
   }
 }

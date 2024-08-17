@@ -1,11 +1,23 @@
 <div class="div-container">
-  @for (product of listProductos; track product.id){
-  <app-card [productCard]="product"></app-card>
-  <div class="div-container-btn">
-    <div class="div-btn-cantidad">
-      <input type="number" [(ngModel)]="listCantidad[product.id]"/>
+  <div class="div-carrito">
+    <h2>Tu Carrito</h2>
+    @for (product of listProductos; track product.id){
+    <div class="div-product">
+      <app-card [productCard]="product"></app-card>
+      <div class="div-container-btn">
+        <div class="div-btn-cantidad">
+          <input type="number" [(ngModel)]="listCantidad[product.id]" />
+        </div>
+        <button class="btn-eliminar" (click)="eliminarProducto(product.id, product.id)">Eliminar</button>
+      </div>
     </div>
-    <button class="btn-eliminar" (click)="eliminarProducto(product.id, product.id)">Eliminar</button>
+    }
   </div>
-  }
+
+  <div class="div-favoritos">
+    <h2>Tus favoritos</h2>
+    @for (product of listFavoritos; track product.id){
+    <app-card [productCard]="product"></app-card>
+    }
+  </div>
 </div>

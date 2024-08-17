@@ -20,7 +20,9 @@ export class CarritoComponent implements OnInit {
 
   listaCarrito: [number, number][] = []; // formato [ [id, cantidad], [2,5], [8,3], [12,9] ]
   listProductos: IProduct[] = []; // lista de productos
+  listFavoritos: IProduct[] = []; // lista de favoritos
   listIds: number[] = [];
+  listIdsFavoritos: number[] = [];
   listCantidad: number[] = [];  // Array para almacenar las cantidades de cada producto
   cantidad: number = 0;
   userId: string = ''; // Variable para almacenar el ID del usuario autenticado
@@ -32,11 +34,13 @@ export class CarritoComponent implements OnInit {
       if (user) {
         this.userId = user.uid;
         this.listaCarrito = this._localStorageService.getCarrito(this.userId);
+        this.listIdsFavoritos = this._localStorageService.getFavoritos(this.userId); // Extraer los IDs de la listaDeFavoritos
         this.listIds = this.listaCarrito.map(([idValue]) => idValue); // Extraer los IDs de la listaCarrito
         console.log(this.listIds);
         this.listCantidad = this.listaCarrito.map(([id, cantidad]) => cantidad); // Extraer las cantidades de la listaCarrito
         console.log(this.listCantidad);
         this.loadProducts();
+        this.loadProductsFavoritos();
         console.log(this.userId);
       }
     }); 
@@ -46,9 +50,20 @@ export class CarritoComponent implements OnInit {
     this.listIds.forEach((id) => {
       this._apiServices.getProductsById(id).subscribe((product) => {
         this.listProductos.push(product);
+        console.log(this.listProductos);
       });
     });
     console.log(this.listProductos);
+  }
+
+  loadProductsFavoritos(): void {
+    this.listIdsFavoritos.forEach((id) => {
+      this._apiServices.getProductsById(id).subscribe((product) => {
+        this.listFavoritos.push(product);
+        console.log(this.listFavoritos);
+      });
+    });
+    console.log("los favoritos son:",this.listProductos);
   }
 
   restarCantidad(index: number): void {
